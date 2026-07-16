@@ -1,0 +1,28 @@
+{
+  "schema": "andy_threads_emergency_readiness.v1",
+  "purpose": "Template publicavel para estimar o que falta para ANDY Threads apoiar engenharia emergencial.",
+  "real_corporate_data": false,
+  "completed_items": [
+    "domain_core",
+    "sector_matrix",
+    "deny_policy",
+    "local_store",
+    "audit_redaction",
+    "emergency_taxonomy"
+  ],
+  "blocked_items": [
+    "notification_bridge",
+    "multiuser_store"
+  ],
+  "pending_items": [
+    "desktop_entrypoint",
+    "thread_panel",
+    "sector_acceptance",
+    "operational_runbook"
+  ],
+  "target_status": "ENGINEERING_EMERGENCY_READY",
+  "notes": [
+    "BI e WPF nativo ficam fora desta fila enquanto Snowflake/acessos estao pendentes.",
+    "O MVP emergencial deve priorizar recorte tecnico, dono correto, decisao registrada e export auditavel da thread."
+  ]
+}

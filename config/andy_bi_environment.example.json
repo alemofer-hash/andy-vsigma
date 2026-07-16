@@ -1,0 +1,34 @@
+{
+  "schema": "andy.bi.environment",
+  "schema_version": 1,
+  "description": "Template only. This prepares ANDY for future corporate BI wiring without requiring network-specific details.",
+  "mode": "preimplementation",
+  "config_files": {
+    "identity": "config/andy_bi_identity.private.json",
+    "tenant_policy": "config/andy_bi_tenant_policy.private.json",
+    "source_policy": "config/andy_corporate_source_policy.json"
+  },
+  "runtime": {
+    "root": "%LOCALAPPDATA%\\ANDY",
+    "workspace": "%LOCALAPPDATA%\\ANDY\\workspace",
+    "lake": "%LOCALAPPDATA%\\ANDY\\workspace\\ANDYS_LAKE",
+    "exports": "%LOCALAPPDATA%\\ANDY\\workspace\\ANDYS_EXPORTS",
+    "logs": "%LOCALAPPDATA%\\ANDY\\logs",
+    "cache": "%LOCALAPPDATA%\\ANDY\\cache"
+  },
+  "network_dependencies": {
+    "identity_provider": "TBD_BY_CORPORATE_IT",
+    "source_catalog_service": "TBD_BY_CORPORATE_IT",
+    "audit_sink": "TBD_BY_CORPORATE_IT"
+  },
+  "feature_flags": {
+    "bi_identity_enabled": false,
+    "bi_policy_enforcement_enabled": false,
+    "bi_audit_sink_enabled": false,
+    "bi_web_companion_enabled": false
+  },
+  "notes": [
+    "Keep this file as a template. Local private environment files are ignored by Git.",
+    "Do not add real hostnames, private UNC paths, tenant IDs or secrets here."
+  ]
+}

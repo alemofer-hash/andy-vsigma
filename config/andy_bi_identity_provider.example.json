@@ -1,0 +1,55 @@
+{
+  "schema": "andy.bi.identity_provider",
+  "schema_version": 1,
+  "description": "Template only. Real corporate identity provider values must live in an unversioned private file after IT/security approval.",
+  "default_provider": "mock_claims",
+  "providers": {
+    "mock_claims": {
+      "enabled": false,
+      "claims_file": "config/andy_bi_mock_claims.private.json",
+      "purpose": "Local RBAC/ABAC development only"
+    },
+    "oidc": {
+      "enabled": false,
+      "stub_only": true,
+      "authority_url": "https://idp.example.invalid/tenant",
+      "client_id": "REPLACE_WITH_PUBLIC_CLIENT_ID",
+      "redirect_uri": "http://localhost:0/andy/auth/callback",
+      "scopes": [
+        "openid",
+        "profile",
+        "email",
+        "groups"
+      ]
+    },
+    "saml": {
+      "enabled": false,
+      "stub_only": true,
+      "metadata_url": "https://idp.example.invalid/saml/metadata",
+      "sp_entity_id": "REPLACE_WITH_SP_ENTITY_ID"
+    },
+    "kerberos": {
+      "enabled": false,
+      "stub_only": true,
+      "realm": "EXAMPLE.INVALID",
+      "service_principal": "HTTP/andy.example.invalid"
+    },
+    "ldap": {
+      "enabled": false,
+      "stub_only": true,
+      "server_url": "ldaps://ldap.example.invalid",
+      "base_dn": "DC=example,DC=invalid"
+    }
+  },
+  "security_rules": {
+    "store_user_password": false,
+    "store_client_secret": false,
+    "network_calls_allowed_in_stub": false,
+    "production_use_allowed": false
+  },
+  "notes": [
+    "This file intentionally contains only placeholders.",
+    "The current corporate providers are stubs and must block instead of authenticating.",
+    "Do not add real tenant, hostname, group, secret or certificate data here."
+  ]
+}

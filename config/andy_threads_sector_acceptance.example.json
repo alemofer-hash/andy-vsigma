@@ -1,0 +1,99 @@
+{
+  "schema": "andy_threads_sector_acceptance.v1",
+  "purpose": "Template publicavel para registrar aceite humano da matriz setorial ANDY Threads.",
+  "real_corporate_data": false,
+  "private_completed_file_required_for_production": true,
+  "acceptance_status": "pending_human_validation",
+  "accepted_for_operational_use": false,
+  "sectors": [
+    {
+      "sector_id": "ENGINEERING",
+      "label": "Engenharia",
+      "representative_role": "engenheiro_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou donos de POWER_INVERSION, LOAD_FLOW_ANOMALY, AT_BT_TRANSITION e PARITY_DESKTOP_BI",
+        "validou campos minimos de contexto"
+      ]
+    },
+    {
+      "sector_id": "OPERATION",
+      "label": "Operacao",
+      "representative_role": "operacao_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou SWITCHING_EVENT",
+        "validou quando deve ser consultada em inversao e fluxo"
+      ]
+    },
+    {
+      "sector_id": "MEASUREMENT_DATA",
+      "label": "Medicao / Dados",
+      "representative_role": "medicao_qualidade_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou MEASUREMENT_GAP, CADENCE_ISSUE, DATA_QUALITY e VARIABLE_MAPPING",
+        "validou regra de cadencia e confiabilidade"
+      ]
+    },
+    {
+      "sector_id": "CADASTRE_ASSETS",
+      "label": "Cadastro / Ativos / GIS",
+      "representative_role": "cadastro_ativos_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou TERMINAL_MAPPING e VARIABLE_MAPPING",
+        "validou criterios de encerramento por erro de cadastro"
+      ]
+    },
+    {
+      "sector_id": "PROTECTION_AUTOMATION",
+      "label": "Protecao / Automacao / SCADA",
+      "representative_role": "scada_automacao_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou PROTECTION_AUTOMATION_SIGNAL",
+        "validou quando sinais de SCADA entram como evidencia"
+      ]
+    },
+    {
+      "sector_id": "WORKS_MAINTENANCE",
+      "label": "Obras / Manutencao",
+      "representative_role": "obras_manutencao_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou WORK_MAINTENANCE_IMPACT",
+        "validou criterios de impacto pos-obra"
+      ]
+    },
+    {
+      "sector_id": "IT_BI_DATA",
+      "label": "TI / Dados / BI",
+      "representative_role": "ti_bi_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou BI_DATASET_ISSUE e ACCESS_RLS_ISSUE",
+        "validou limites de workspace, RLS e refresh"
+      ]
+    },
+    {
+      "sector_id": "MANAGEMENT",
+      "label": "Gestao",
+      "representative_role": "gestao_responsavel",
+      "review_status": "pending",
+      "accepted": false,
+      "required_evidence": [
+        "validou linguagem executiva e criterios de acompanhamento",
+        "validou que gestao nao substitui dono tecnico"
+      ]
+    }
+  ],
+  "acceptance_records": []
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "andy.bi.policy_bundle",
+  "schema_version": 1,
+  "description": "Template-only bundle for future corporate BI configuration. Real values belong in private unversioned files.",
+  "mode": "preimplementation",
+  "identity_config": "config/andy_bi_identity.private.json",
+  "tenant_policy": "config/andy_bi_tenant_policy.private.json",
+  "environment_config": "config/andy_bi_environment.private.json",
+  "source_policy": "config/andy_corporate_source_policy.json",
+  "defaults": {
+    "decision": "deny",
+    "require_identity": true,
+    "require_policy_scope": true,
+    "require_export_audit": true,
+    "allow_password_storage": false,
+    "allow_unscoped_queries": false
+  },
+  "readiness_gates": [
+    "scripts/check_andy_bi_readiness.py",
+    "scripts/check_corporate_source_policy_private.py"
+  ],
+  "notes": [
+    "This file is safe to version because it contains placeholders only.",
+    "Do not put real network paths, hostnames, tenant details, secrets or group names here.",
+    "The future runtime should load private files only after human and corporate IT/security review."
+  ]
+}

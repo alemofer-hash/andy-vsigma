@@ -1,0 +1,26 @@
+{
+  "schema": "andy.bi.refresh.v1",
+  "real_gateway_configured": false,
+  "publish_automatically": false,
+  "refresh_modes": [
+    "manual",
+    "scheduled",
+    "incremental"
+  ],
+  "default_mode": "manual",
+  "incremental_keys": [
+    "lote_id",
+    "source_id",
+    "source_period_start",
+    "source_period_end"
+  ],
+  "retention": {
+    "dataset_lotes": "policy_defined_by_data_owner",
+    "logs_days": 90,
+    "rollback_lotes": 2
+  },
+  "stale_catalog_policy": {
+    "detect_before_build": true,
+    "block_publish_when_stale": true
+  }
+}

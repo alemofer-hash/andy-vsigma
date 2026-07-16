@@ -1,0 +1,87 @@
+{
+  "schema": "andy.bi.mock_claims",
+  "schema_version": 1,
+  "description": "Template-only fictitious claims for local RBAC/ABAC tests. Copy to a private file and set mock_enabled=true only for controlled development.",
+  "mock_enabled": false,
+  "default_identity": "mock_engineer_rs",
+  "identities": [
+    {
+      "identity_key": "mock_engineer_rs",
+      "subject": "mock-user-engineer-rs",
+      "display_name": "Engenheiro BI Mock RS",
+      "email_or_employee_id": "mock.engineer.rs@example.invalid",
+      "groups": [
+        "ANDY_BI_ENGINEERING_GROUP_PLACEHOLDER"
+      ],
+      "roles": [
+        "engineer"
+      ],
+      "distributor_scope": [
+        "DISTRIBUTOR_RS_PLACEHOLDER"
+      ],
+      "state_scope": [
+        "RS"
+      ],
+      "source_scope": [
+        "${ANDY_BI_RS_SOURCE_ROOT}"
+      ],
+      "claims_source": "mock",
+      "auth_method": "mock"
+    },
+    {
+      "identity_key": "mock_viewer_pa",
+      "subject": "mock-user-viewer-pa",
+      "display_name": "Leitor BI Mock PA",
+      "email_or_employee_id": "mock.viewer.pa@example.invalid",
+      "groups": [
+        "ANDY_BI_VIEWER_GROUP_PLACEHOLDER"
+      ],
+      "roles": [
+        "viewer"
+      ],
+      "distributor_scope": [
+        "DISTRIBUTOR_PA_PLACEHOLDER"
+      ],
+      "state_scope": [
+        "PA"
+      ],
+      "source_scope": [
+        "${ANDY_BI_PA_SOURCE_ROOT}"
+      ],
+      "claims_source": "mock",
+      "auth_method": "mock"
+    },
+    {
+      "identity_key": "mock_support",
+      "subject": "mock-user-support",
+      "display_name": "Suporte BI Mock",
+      "email_or_employee_id": "mock.support@example.invalid",
+      "groups": [
+        "ANDY_BI_SUPPORT_GROUP_PLACEHOLDER"
+      ],
+      "roles": [
+        "support"
+      ],
+      "distributor_scope": [
+        "*"
+      ],
+      "state_scope": [
+        "*"
+      ],
+      "source_scope": [],
+      "claims_source": "mock",
+      "auth_method": "mock"
+    }
+  ],
+  "safety": {
+    "network_calls": false,
+    "password_storage": false,
+    "real_identity_provider_required": false,
+    "production_use_allowed": false
+  },
+  "notes": [
+    "All identities are fictitious.",
+    "Do not add real employees, groups, tenant IDs or paths to this example.",
+    "The resolver remains disabled unless explicitly enabled by test code or ANDY_BI_IDENTITY_MOCK_ENABLED=1."
+  ]
+}

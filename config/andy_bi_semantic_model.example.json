@@ -1,0 +1,12 @@
+{
+  "schema": "andy.bi.semantic.v1",
+  "critical_math_policy": {
+    "python_engine_is_source_of_truth": true,
+    "bi_may_reaggregate_precomputed_values": true,
+    "bi_may_reimplement_mva_fp_mw_flow_patamar": false
+  },
+  "notes": [
+    "Power BI or another corporate BI may present and aggregate precomputed values.",
+    "MVA, FP, MW, flow, inversion and patamar must come from the ANDY Python engine unless a parity-tested contract changes this."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "andy.bi.identity",
+  "schema_version": 1,
+  "description": "Template only. Copy to an unversioned private file after corporate identity details are approved.",
+  "mode": "not_configured",
+  "provider": {
+    "type": "TBD_OIDC_SAML_KERBEROS_OR_LDAP",
+    "authority_url": "https://idp.example.invalid/tenant",
+    "tenant_id": "REPLACE_WITH_CORPORATE_TENANT_ID_OR_REALM",
+    "client_id": "REPLACE_WITH_PUBLIC_CLIENT_ID_IF_APPLICABLE",
+    "redirect_uri": "http://localhost:0/andy/auth/callback",
+    "scopes": [
+      "openid",
+      "profile",
+      "email",
+      "groups"
+    ]
+  },
+  "security_rules": {
+    "store_user_password": false,
+    "store_client_secret": false,
+    "interactive_password_login_allowed": false,
+    "token_cache_target": "future_os_credential_manager_or_windows_account",
+    "require_tls": true,
+    "require_expiring_tokens": true
+  },
+  "required_claims": [
+    "subject",
+    "display_name",
+    "email_or_employee_id",
+    "groups",
+    "distributor_scope",
+    "state_scope",
+    "roles"
+  ],
+  "role_mapping": {
+    "ANDY_BI_ADMIN_GROUP_PLACEHOLDER": [
+      "admin"
+    ],
+    "ANDY_BI_ENGINEERING_GROUP_PLACEHOLDER": [
+      "engineer"
+    ],
+    "ANDY_BI_VIEWER_GROUP_PLACEHOLDER": [
+      "viewer"
+    ],
+    "ANDY_BI_SUPPORT_GROUP_PLACEHOLDER": [
+      "support"
+    ]
+  },
+  "notes": [
+    "Do not place real secrets, passwords or private tenant data in this template.",
+    "The production file must stay outside Git and be reviewed by corporate IT/security.",
+    "ANDY must receive identity from the corporate provider; it must not become a password database."
+  ]
+}

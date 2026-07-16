@@ -1,0 +1,52 @@
+{
+  "schema": "andy_threads_policy.v1",
+  "default_decision": "deny",
+  "real_identity_provider_enabled": false,
+  "mvp_limits": {
+    "attachments_enabled": false,
+    "direct_messages_enabled": false,
+    "notifications_enabled": false,
+    "corporate_store_enabled": false
+  },
+  "actions": [
+    "CREATE_THREAD",
+    "READ_THREAD",
+    "COMMENT",
+    "CHANGE_STATUS",
+    "CREATE_DECISION",
+    "EXPORT_THREAD",
+    "ARCHIVE_THREAD"
+  ],
+  "roles": {
+    "thread_viewer": {
+      "can_read": true,
+      "can_comment": false,
+      "can_export": false
+    },
+    "thread_engineer": {
+      "can_read": true,
+      "can_comment": true,
+      "can_create_decision": true,
+      "can_export": false
+    },
+    "thread_auditor": {
+      "can_read": true,
+      "can_comment": false,
+      "can_view_audit": true,
+      "can_export": true
+    }
+  },
+  "scope_examples": [
+    {
+      "scope_id": "synthetic_engineering_rs",
+      "state": "RS",
+      "distributor": "SYNTHETIC",
+      "substations": [
+        "SE1"
+      ],
+      "feeders": [
+        "AL1"
+      ]
+    }
+  ]
+}

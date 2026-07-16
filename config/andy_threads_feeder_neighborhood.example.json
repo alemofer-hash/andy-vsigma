@@ -1,0 +1,25 @@
+{
+  "substations": {
+    "MOS": {
+      "neighbor_pairs": [
+        ["AL3", "AL4"]
+      ],
+      "upstream_references": ["TR-1"]
+    },
+    "OSO1": {
+      "neighbor_pairs": [],
+      "upstream_references": ["TR-1", "TR-1_BKP"]
+    }
+  },
+  "pre_windows_hours": [2, 4, 8],
+  "post_windows_hours": [2, 4, 8],
+  "min_persistence_samples": 2,
+  "max_pair_time_offset_intervals": 1,
+  "robust_z_threshold": 3.0,
+  "min_balance_for_transfer": 0.55,
+  "min_quality_score": 0.35,
+  "min_common_coverage": 0.6,
+  "paper_reproduction_mode": false,
+  "paper_window_samples": 200,
+  "paper_overlap": 0.5
+}

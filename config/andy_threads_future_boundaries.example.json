@@ -1,0 +1,32 @@
+{
+  "schema": "andy_threads_future_boundaries.v1",
+  "purpose": "Feature-boundary publico para impedir ativacao acidental de recursos futuros do ANDY Threads.",
+  "mvp_mode": true,
+  "real_identity_provider_enabled": false,
+  "corporate_multiuser_store": {
+    "enabled": false,
+    "requires_private_architecture_review": true,
+    "requires_security_owner": true,
+    "requires_data_owner": true
+  },
+  "pyside_desktop_ui": {
+    "enabled": false,
+    "requires_visual_acceptance": true,
+    "requires_desktop_flow_acceptance": true
+  },
+  "local_api": {
+    "enabled": false,
+    "requires_threat_model": true,
+    "requires_loopback_only_default": true
+  },
+  "notifications": {
+    "enabled": false,
+    "channels": [],
+    "requires_corporate_provider_review": true,
+    "must_not_be_source_of_truth": true
+  },
+  "attachments": {
+    "enabled": false,
+    "requires_dlp_review": true
+  }
+}

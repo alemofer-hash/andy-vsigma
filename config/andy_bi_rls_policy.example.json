@@ -1,0 +1,49 @@
+{
+  "schema": "andy.bi.rls.v1",
+  "default_decision": "deny",
+  "identity_source": "corporate_platform_or_mock_for_tests",
+  "real_provider_enabled": false,
+  "roles": {
+    "viewer": {
+      "can_view": true,
+      "can_export": false,
+      "can_admin_dataset": false
+    },
+    "engineer": {
+      "can_view": true,
+      "can_export": true,
+      "can_admin_dataset": false
+    },
+    "auditor": {
+      "can_view": true,
+      "can_export": false,
+      "can_view_audit": true,
+      "can_admin_dataset": false
+    },
+    "admin_dataset": {
+      "can_view": true,
+      "can_export": true,
+      "can_admin_dataset": true
+    },
+    "bi_owner": {
+      "can_view": true,
+      "can_export": true,
+      "can_admin_dataset": true
+    }
+  },
+  "scopes": [
+    {
+      "scope_id": "demo_rs_engineering",
+      "distributor": "DEMO",
+      "state": "RS",
+      "source_id": "source_demo",
+      "allowed_roles": [
+        "viewer",
+        "engineer",
+        "auditor",
+        "admin_dataset",
+        "bi_owner"
+      ]
+    }
+  ]
+}

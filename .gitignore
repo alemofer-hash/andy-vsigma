@@ -1,0 +1,98 @@
+# ANDY / Sentinela repository hygiene
+
+# Python environments and caches
+.venv/
+venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node/front-end dependencies and outputs
+node_modules/
+.next/
+out/
+coverage/
+
+# Runtime, generated data, validation captures and local reports
+artifacts/
+reports/
+exports/
+logs/
+runtime/
+cache/
+tmp/
+temp/
+.validation_tmp/
+.recovery_backups/
+
+# Build and installer outputs
+build/
+dist/
+*.exe
+*.msi
+*.cab
+*.zip
+*.7z
+*.tar
+*.tgz
+*.gz
+
+# Operational data and local database/lake files
+*.duckdb
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.feather
+*.orc
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.tsv
+
+# Logs and traces
+*.log
+*.jsonl
+
+# Private configuration and credentials
+.env
+.env.*
+*.private.json
+config/andy_bi_identity.json
+config/andy_bi_identity.private.json
+config/andy_bi_environment.local.json
+config/andy_bi_environment.json
+config/andy_bi_environment.private.json
+config/andy_bi_tenant_policy.json
+config/andy_bi_tenant_policy.private.json
+config/andy_bi_corporate_intake.json
+config/andy_bi_corporate_intake.private.json
+credentials/
+credential/
+secrets/
+secret/
+tokens/
+token/
+*.credential
+*.credentials
+*.secret
+*.secrets
+*.token
+*.tokens
+*.pem
+*.pfx
+*.key
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+.vscode/

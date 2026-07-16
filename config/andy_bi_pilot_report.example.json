@@ -1,0 +1,13 @@
+{
+  "schema": "andy.bi.pilot_report.example.v1",
+  "dataset": "artifacts/andy_bi_dataset",
+  "out": "artifacts/andy_bi_pilot_report",
+  "title": "ANDY BI Web Pilot",
+  "require_synthetic": true,
+  "publish_automatically": false,
+  "safety_boundary": {
+    "contains_real_data": false,
+    "uses_real_identity_provider": false,
+    "requires_human_approval_before_publish": true
+  }
+}

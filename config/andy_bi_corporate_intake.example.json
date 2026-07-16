@@ -1,0 +1,49 @@
+{
+  "schema": "andy.bi.corporate_intake",
+  "schema_version": 1,
+  "description": "Template only. Copy to config/andy_bi_corporate_intake.private.json and fill with approved corporate values.",
+  "mode": "private_config_intake",
+  "https_security": {
+    "min_tls_version": "1.2",
+    "prefer_tls_version": "1.3",
+    "verify_tls_certificates": true,
+    "allow_self_signed_certificates": false,
+    "allow_plain_http": false,
+    "allow_http_localhost_redirect": true,
+    "certificate_pinning": "optional_future_it_policy",
+    "secrets_storage": "external_vault_or_os_credential_manager"
+  },
+  "identity_provider": {
+    "provider_type": "oidc",
+    "authority_url": "https://idp.example.invalid/tenant",
+    "client_id": "REPLACE_WITH_PUBLIC_CLIENT_ID",
+    "redirect_uri": "http://localhost:0/andy/auth/callback",
+    "scopes": [
+      "openid",
+      "profile",
+      "email",
+      "groups"
+    ],
+    "client_secret": ""
+  },
+  "saml": {
+    "metadata_url": "https://idp.example.invalid/saml/metadata",
+    "sp_entity_id": "REPLACE_WITH_SP_ENTITY_ID"
+  },
+  "ldap": {
+    "server_url": "ldaps://ldap.example.invalid",
+    "base_dn": "DC=example,DC=invalid",
+    "bind_password": ""
+  },
+  "services": {
+    "audit_sink_url": "https://audit.example.invalid/andy",
+    "source_catalog_url": "https://catalog.example.invalid/andy"
+  },
+  "tenant_policy_private_path": "config/andy_bi_tenant_policy.private.json",
+  "source_policy_private_path": "config/andy_corporate_source_policy.json",
+  "notes": [
+    "Do not commit this file after filling real values.",
+    "Do not store passwords, tokens or client secrets here.",
+    "Reports must redact URLs, hostnames and paths."
+  ]
+}

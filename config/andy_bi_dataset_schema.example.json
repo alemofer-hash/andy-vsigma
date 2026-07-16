@@ -1,0 +1,15 @@
+{
+  "schema": "andy.bi.dataset.v1",
+  "dataset_version": "0.1.0",
+  "engine_source_of_truth": "python",
+  "notes": [
+    "Example only. Do not place real operational data, endpoints, credentials or private paths here.",
+    "The generated schema.json is produced by andy_bi.data_contract."
+  ],
+  "output_policy": {
+    "publish_automatically": false,
+    "include_real_source_path": false,
+    "include_credentials": false,
+    "critical_math_source": "andy_python_engine"
+  }
+}

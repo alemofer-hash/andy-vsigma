@@ -1,0 +1,70 @@
+{
+  "schema": "andy_threads_sector_matrix.v1",
+  "source": "synthetic_initial_matrix",
+  "sectors": [
+    {
+      "sector_id": "ENGINEERING",
+      "label": "Engenharia",
+      "owns": [
+        "LOAD_FLOW_ANOMALY",
+        "POWER_INVERSION",
+        "AT_BT_TRANSITION",
+        "PARITY_DESKTOP_BI"
+      ],
+      "consulted_on": [
+        "SWITCHING_EVENT",
+        "WORK_MAINTENANCE_IMPACT",
+        "TERMINAL_MAPPING"
+      ]
+    },
+    {
+      "sector_id": "OPERATION",
+      "label": "Operacao",
+      "owns": [
+        "SWITCHING_EVENT"
+      ],
+      "consulted_on": [
+        "POWER_INVERSION",
+        "LOAD_FLOW_ANOMALY"
+      ]
+    },
+    {
+      "sector_id": "MEASUREMENT_DATA",
+      "label": "Medicao / Dados",
+      "owns": [
+        "MEASUREMENT_GAP",
+        "CADENCE_ISSUE",
+        "DATA_QUALITY",
+        "VARIABLE_MAPPING"
+      ],
+      "consulted_on": [
+        "TERMINAL_MAPPING",
+        "BI_DATASET_ISSUE"
+      ]
+    },
+    {
+      "sector_id": "CADASTRE_ASSETS",
+      "label": "Cadastro / Ativos / GIS",
+      "owns": [
+        "TERMINAL_MAPPING",
+        "VARIABLE_MAPPING"
+      ],
+      "consulted_on": [
+        "AT_BT_TRANSITION",
+        "POWER_INVERSION"
+      ]
+    },
+    {
+      "sector_id": "IT_BI_DATA",
+      "label": "TI / Dados / BI",
+      "owns": [
+        "BI_DATASET_ISSUE",
+        "ACCESS_RLS_ISSUE"
+      ],
+      "consulted_on": [
+        "DATA_QUALITY",
+        "PARITY_DESKTOP_BI"
+      ]
+    }
+  ]
+}

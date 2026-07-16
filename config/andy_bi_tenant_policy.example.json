@@ -1,0 +1,112 @@
+{
+  "schema": "andy.bi.tenant_policy",
+  "schema_version": 1,
+  "description": "Template only. Real distributor paths, groups and source roots belong in an unversioned private policy.",
+  "default_decision": "deny",
+  "policy_mode": "template_only",
+  "roles": {
+    "admin": {
+      "can_query": true,
+      "can_view_dashboard": true,
+      "can_manage_sources": true,
+      "can_export": true,
+      "can_view_audit": true,
+      "can_run_support_bundle": true
+    },
+    "engineer": {
+      "can_query": true,
+      "can_view_dashboard": true,
+      "can_manage_sources": false,
+      "can_export": true,
+      "can_view_audit": false,
+      "can_run_support_bundle": true
+    },
+    "viewer": {
+      "can_query": true,
+      "can_view_dashboard": true,
+      "can_manage_sources": false,
+      "can_export": false,
+      "can_view_audit": false,
+      "can_run_support_bundle": false
+    },
+    "support": {
+      "can_query": true,
+      "can_view_dashboard": true,
+      "can_manage_sources": false,
+      "can_export": false,
+      "can_view_audit": true,
+      "can_run_support_bundle": true
+    }
+  },
+  "tenants": [
+    {
+      "tenant_id": "DISTRIBUTOR_RS_PLACEHOLDER",
+      "state": "RS",
+      "display_name": "Placeholder distributor RS",
+      "source_roots": [
+        "${ANDY_BI_RS_SOURCE_ROOT}"
+      ],
+      "allowed_cadences": [
+        "15min",
+        "hourly"
+      ],
+      "allowed_roles": [
+        "admin",
+        "engineer",
+        "viewer",
+        "support"
+      ]
+    },
+    {
+      "tenant_id": "DISTRIBUTOR_MA_PLACEHOLDER",
+      "state": "MA",
+      "display_name": "Placeholder distributor MA",
+      "source_roots": [
+        "${ANDY_BI_MA_SOURCE_ROOT}"
+      ],
+      "allowed_cadences": [
+        "15min",
+        "hourly"
+      ],
+      "allowed_roles": [
+        "admin",
+        "engineer",
+        "viewer",
+        "support"
+      ]
+    },
+    {
+      "tenant_id": "DISTRIBUTOR_PA_PLACEHOLDER",
+      "state": "PA",
+      "display_name": "Placeholder distributor PA",
+      "source_roots": [
+        "${ANDY_BI_PA_SOURCE_ROOT}"
+      ],
+      "allowed_cadences": [
+        "15min",
+        "hourly"
+      ],
+      "allowed_roles": [
+        "admin",
+        "engineer",
+        "viewer",
+        "support"
+      ]
+    }
+  ],
+  "denied_locations": [
+    "%LOCALAPPDATA%\\ANDY",
+    "%TEMP%"
+  ],
+  "export_policy": {
+    "require_audit_event": true,
+    "require_user_identity": true,
+    "require_filter_snapshot": true,
+    "include_distributor_scope": true
+  },
+  "notes": [
+    "Use environment variables or a private service for real paths.",
+    "A user must never see tenants outside the policy scope.",
+    "Real group names and source roots must not be committed."
+  ]
+}

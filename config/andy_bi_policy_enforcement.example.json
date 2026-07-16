@@ -1,0 +1,40 @@
+{
+  "schema": "andy.bi.policy_enforcement",
+  "schema_version": 1,
+  "description": "Template only. Policy enforcement is disabled by default and must not point to real corporate identity data here.",
+  "enabled": false,
+  "mode": "mock_claims_preflight_only",
+  "operations_subject_to_policy": [
+    "query.overview",
+    "query.options",
+    "query.page",
+    "load_profile.analyze",
+    "export.audit",
+    "export.csv_long",
+    "export.csv_wide",
+    "export.xlsx_dashboard"
+  ],
+  "required_payload_when_enabled": [
+    "bi_policy.identity_key",
+    "bi_scope.tenant_id",
+    "bi_scope.state",
+    "bi_scope.source_root"
+  ],
+  "environment_flags": {
+    "enable": "ANDY_BI_POLICY_ENFORCEMENT_ENABLED",
+    "identity_key": "ANDY_BI_IDENTITY_KEY",
+    "mock_claims_file": "ANDY_BI_MOCK_CLAIMS_FILE",
+    "tenant_policy_file": "ANDY_BI_TENANT_POLICY_FILE"
+  },
+  "safety": {
+    "connects_to_corporate_network": false,
+    "stores_passwords": false,
+    "uses_real_identity_provider": false,
+    "changes_analytical_engine": false
+  },
+  "notes": [
+    "This template is safe to version because it contains no real identity provider, group, tenant or path.",
+    "Operational enforcement must stay behind feature flag until corporate identity data is approved.",
+    "Denied policy decisions must happen before query/export execution."
+  ]
+}
